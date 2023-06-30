@@ -1,0 +1,210 @@
+{% extends 'main.html' %}
+{% block content %}
+
+<div class="row"  style="margin-bottom: 125px;">
+    <div class="col-md-2"></div>
+    <div class="col-md-8">
+        <section class="jumbotron p-3 p-md-5 text-white rounded bg-dark text-center">
+        <div class="container">
+          <h1 class="jumbotron-heading">Autism Detection</h1>
+        <div class="card card-body" style="border: 1px solid black;">
+            <form class="form-horizontal" action="{{ url_for('predictPage') }}" method="POST">
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <input style="border: 1px solid black;" class="form-control" type="text" name="A1" placeholder="A1">
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <input style="border: 1px solid black;" class="form-control" type="text" name="A2" placeholder="A2">
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <input style="border: 1px solid black;" class="form-control" type="text" name="A3" placeholder="A3">
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <input style="border: 1px solid black;" class="form-control" type="text" name="A4" placeholder="A4">
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <input style="border: 1px solid black;" class="form-control" type="text" name="A5" placeholder="A5">
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <input style="border: 1px solid black;" class="form-control" type="text" name="A6" placeholder="A6">
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <input style="border: 1px solid black;" class="form-control" type="text" name="A7" placeholder="A7">
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <input style="border: 1px solid black;" class="form-control" type="text" name="A8" placeholder="A8">
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <input style="border: 1px solid black;" class="form-control" type="text" name="A9" placeholder="A9">
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <input style="border: 1px solid black;" class="form-control" type="text" name="A10" placeholder="A10">
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <input style="border: 1px solid black;" class="form-control" type="text" name="Age_Mons" placeholder="Age_Mons">
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <input style="border: 1px solid black;" class="form-control" type="text" name="Qchat-10-Score" placeholder="Qchat-10-Score">
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <input style="border: 1px solid black;" class="form-control" type="text" name="Sex" placeholder="Sex">
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <input style="border: 1px solid black;" class="form-control" type="text" name="Ethnicity" placeholder="Ethnicity">
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <input style="border: 1px solid black;" class="form-control" type="text" name="Jaundice" placeholder="Jaundice">
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <input style="border: 1px solid black;" class="form-control" type="text" name="Family_mem_with_ASD" placeholder="Family_mem_with_ASD">
+                        </div>
+                    </div>
+                </div>
+                <input type="submit" class="btn btn-info btn-block" value="Predict">
+            </form>
+        </div>
+    </div>
+    <div class="col-md-2"></div>
+</div> <br>
+
+<div class="row featurette">
+          <div class="col-md-12">
+            <h2 class="featurette-heading">About Q-CHAT</h2>
+            <p class="lead">The Q-CHAT-10 assesses symptoms that have shown to be indicative of autism. It’s a quick reference guide for parents to complete about their toddler with concerns about autism.A1-A10 are the Q-CHAT-10 questions for screening of children</p>
+          </div>
+        </div>
+
+<!-- <table class="table">
+  <thead>
+    <tr>
+      <th Age_Monsope="col">A1</th>
+      <th Age_Monsope="col">A2</th>
+      <th Age_Monsope="col">A3</th>
+      <th Age_Monsope="col">A4</th>
+      <th Age_Monsope="col">A5</th>
+      <th Age_Monsope="col">A6</th>
+      <th Age_Monsope="col">A7</th>
+      <th Age_Monsope="col">A8</th>
+      <th Age_Monsope="col">A9</th>
+      <th Age_Monsope="col">A10</th>
+      <th Age_Monsope="col">Age_Mons</th>
+      <th Age_Monsope="col">Qchat-10-Score</th>
+      <th Age_Monsope="col">Sex</th>
+      <th Age_Monsope="col">Ethnicity</th>
+      <th Age_Monsope="col">Jaundice</th>
+      <th Age_Monsope="col">Family_mem_with_ASD</th>
+     <th Age_Monsope="col">pe</th>
+      <th Age_Monsope="col">ane</th> -->
+      <!-- <th Age_Monsope="col">Disease</th> -->
+
+ <!--    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      
+      <td>1</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>36</td>
+      <td>4</td>
+      <td>1</td>
+      <td>5</td>
+      <td>1</td>
+      <td>0</td> -->
+<!--       <td>0</td>
+      <td>1</td> -->
+      <!-- <td>Positive</td>
+    </tr>
+    <tr>
+      <td>68</td>
+      <td>80</td>
+      <td>3</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>157</td>
+      <td>162</td>
+      <td>9.6</td>
+      <td>4.9</td>
+      <td>11000</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td> -->
+<!--       <td>0</td>
+      <td>1</td>
+      <td>Present</td> -->
+    <!-- </tr>
+    <tr>
+      <td>51</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>121</td>
+      <td>27</td>
+      <td>0.8</td>
+      <td>3.7</td>
+      <td>8300</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td> -->
+<!--       <td>0</td>
+      <td>0</td>
+      <td>Healthy</td> -->
+    <!-- </tr>
+  </tbody>
+</table> --> 
+{% endblock %}
